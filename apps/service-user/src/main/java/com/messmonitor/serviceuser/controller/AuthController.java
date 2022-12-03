@@ -1,5 +1,6 @@
 package com.messmonitor.serviceuser.controller;
 
+
 import com.messmonitor.serviceuser.dto.request.SignUpRequest;
 import com.messmonitor.serviceuser.dto.request.SigninRequest;
 import com.messmonitor.serviceuser.dto.response.MessageResponse;
@@ -79,7 +80,9 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
 
+
   /*  @PostMapping("users/change-password")
+    @PostMapping("users/change-password")
     public ResponseEntity<?> changePassword(@Valid @RequestBody ChangePasswordRequestDTO changePasswordDTO) throws Exception {
 
             String header = jwtUtils.getTokenWithBearerFromHeader("AUTHORIZATION");
@@ -89,6 +92,10 @@ public class AuthController {
                     //Long.valueOf(Jwts.parser().setSigningKey(DatatypeConverter.parseBase64Binary(jwtSecret)).parseClaimsJws(token).getBody().getId());
 
             String status = authService.changeUserPassword(changePasswordDTO, user_id);*//*
+            Long user_id = auth.getPrincipal()s()
+                    //Long.valueOf(Jwts.parser().setSigningKey(DatatypeConverter.parseBase64Binary(jwtSecret)).parseClaimsJws(token).getBody().getId());
+
+            String status = authService.changeUserPassword(changePasswordDTO, user_id);
 
             return ResponseEntity.ok(
                     "Changed password succesfully!"
@@ -100,7 +107,7 @@ public class AuthController {
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
 
         String header = jwtUtils.getTokenWithBearerFromHeader("AUTHORIZATION");
-        String token = jwtUtils.parseToken(header, "Bearer ");
+        String token =  jwtUtils.parseToken(header,"Bearer ");
         String logoutOk = jwtUtils.getExpiryFromJwt(token);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 

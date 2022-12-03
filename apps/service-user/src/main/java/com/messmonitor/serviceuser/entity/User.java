@@ -37,6 +37,7 @@ public class User {
     private Boolean isActive;
 
 
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -84,6 +85,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
     public Boolean getActive() {
         return isActive;
